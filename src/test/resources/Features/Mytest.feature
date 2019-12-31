@@ -6,11 +6,11 @@ Given Open the Chrome and launch the application
 
 When Navigation to register page
 
-And Enter the Name "<name>", LastName "<lastname>", Email "<email>" and Phone "<phone>"
+And Enter the Name "<name>", LastName "<lastname>", Email "<email>", Phone "<phone>", Skills "<skills>" and Country "<country>"
 
-Then Reset the credential						
+Then Register new User						
 
 Examples:                      		
 
-| name 	| lastname  | email | phone |  
-| name1   | lastname1 |	lucas_v@teste.com | 4190000131|  
+| name 	| lastname  | email | phone | skills | country |
+| name1   | lastname1 |	lucas_v@teste.com | 4190000131| Client Server | Aruba |

@@ -36,17 +36,17 @@ public class Register {
 	public void setGender(){
 		 driver.findElement(Gender).click();
 	}
-	public void setSkills(){
+	public void setSkills(String strSkills){
 		Select selSkills = new Select(driver.findElement(Skills));
-		selSkills.selectByValue("Client Server");
+		selSkills.selectByValue(strSkills);
 	}
-	public void setCountrie(){
-		Select selCountrie = new Select(driver.findElement(Countries));
-		selCountrie.selectByValue("Aruba");
+	public void setCountry(String strCountry){
+		Select selCountry = new Select(driver.findElement(Countries));
+		selCountry.selectByValue(strCountry);
 	}
 	
 	
-	public void doRegister(String Name,String LastName, String Email, String Phone){
+	public void doRegister(String Name,String LastName, String Email, String Phone, String Skills, String Country){
 		//Fill user name
 		this.setUserName(Name);
 		//Fill password
@@ -55,8 +55,8 @@ public class Register {
 		this.setEmail(Email);
 		this.setPhone(Phone);
 		this.setGender();
-		this.setSkills();
-		this.setCountrie();
+		this.setSkills(Skills);
+		this.setCountry(Country);
 		
 	}
 

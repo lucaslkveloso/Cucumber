@@ -34,18 +34,18 @@ public class Steps {
     	objHomePage = new HomePage(driver);
     	objHomePage.ClickFirstProduct();
     }
-    @When("^Enter the Name \"(.*?)\", LastName \"(.*?)\", Email \"(.*?)\" and Phone \"(.*?)\"$")
-    public void enter_the_Name_LastName_Email_and_Phone(String name, String lastname, String email, String phone) throws Throwable
+    @When("^Enter the Name \"(.*?)\", LastName \"(.*?)\", Email \"(.*?)\", Phone \"(.*?)\", Skills \"(.*?)\" and Country \"(.*?)\"$")
+    public void enter_the_Name_LastName_Email_Phone_Skills_and_Country(String name, String lastname, String email, String phone, String skills, String country) throws Throwable
     {
     	objRegister = new Register(driver);
     	//Verify login page title
     	//login to application
-    	objRegister.doRegister(name, lastname, email, phone);    	
+    	objRegister.doRegister(name, lastname, email, phone, skills, country);    	
     }
 
-    @Then("^Reset the credential$")					
-    public void	Reset_the_credential() throws Throwable 							
+    @Then("^Register new User$")					
+    public void	Register_new_user() throws Throwable 							
     {		
-       driver.findElement(By.name("btnReset")).click();					
+       driver.findElement(By.id("submitbtn")).click();					
     }		
 }		

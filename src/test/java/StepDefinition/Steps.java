@@ -34,13 +34,13 @@ public class Steps {
     	objHomePage = new HomePage(driver);
     	objHomePage.ClickFirstProduct();
     }
-    @When("^Enter the Name \"(.*?)\", LastName \"(.*?)\"	and Email \"(.*?)\"$")
-    public void enter_the_Name_LastName_and_Email(String name, String lastname, String email) throws Throwable
+    @When("^Enter the Name \"(.*?)\", LastName \"(.*?)\", Email \"(.*?)\" and Phone \"(.*?)\"$")
+    public void enter_the_Name_LastName_Email_and_Phone(String name, String lastname, String email, String phone) throws Throwable
     {
     	objRegister = new Register(driver);
     	//Verify login page title
     	//login to application
-    	objRegister.doRegister(name, lastname, email);    	
+    	objRegister.doRegister(name, lastname, email, phone);    	
     }
 
     @Then("^Reset the credential$")					

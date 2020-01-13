@@ -2,7 +2,7 @@
 
 Automation of demo site with Java, Selenium and Cucumber
 
-##Getting Started
+## Getting Started
 
 * Install last version of the __JDK__ <br>
 * Download __Eclipse__ <br>

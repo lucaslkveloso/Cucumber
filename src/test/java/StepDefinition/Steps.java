@@ -9,9 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import PageObjects.HomePage;
 import PageObjects.Register;
 import PageObjects.Setup;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class Steps {				
 
@@ -20,7 +20,7 @@ public class Steps {
 	Register objRegister;
    		
     @Given("^Open the Chrome and launch the application$")					
-    public void open_the_chrome_and_launch_the_application() throws Throwable							
+    public void open_the_chrome_and_launch_the_application()
     {	
     	Setup.DefaultSetup();
     	driver = new ChromeDriver();
@@ -29,13 +29,13 @@ public class Steps {
 		driver.manage().window().maximize();
     }	
     @When("^Navigation to register page$")		
-    public void navigation_to_register_page() throws Throwable 							
+    public void navigation_to_register_page()
     {	
     	objHomePage = new HomePage(driver);
     	objHomePage.ClickFirstProduct();
     }
     @When("^Enter the Name \"(.*?)\", LastName \"(.*?)\", Email \"(.*?)\", Phone \"(.*?)\", Skills \"(.*?)\", Country \"(.*?)\", Year \"(.*?)\", Month \"(.*?)\", Day \"(.*?)\" And Password \"(.*?)\"$")
-    public void enter_the_Name_LastName_Email_Phone_Skills_Country_Year_Month_Day_And_Password(String name, String lastname, String email, String phone, String skills, String country, String year, String month, String day, String password) throws Throwable
+    public void enter_the_Name_LastName_Email_Phone_Skills_Country_Year_Month_Day_And_Password(String name, String lastname, String email, String phone, String skills, String country, String year, String month, String day, String password)
     {
     	objRegister = new Register(driver);
     	//Verify login page title
@@ -44,7 +44,7 @@ public class Steps {
     }
 
     @Then("^Register new User$")					
-    public void	Register_new_user() throws Throwable 							
+    public void	Register_new_user()
     {		
        driver.findElement(By.id("submitbtn")).click();					
     }		
